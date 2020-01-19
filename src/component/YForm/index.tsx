@@ -16,10 +16,16 @@ interface YFormProps extends FormProps {
   columns?: number; // form columns
   gutter?: number; // form gutter
 }
-const YForm: React.FC<YFormProps> = ({ configData, columns, style, ...props }) => {
+const YForm: React.FC<YFormProps> = ({
+  configData = [],
+  columns,
+  gutter = 24,
+  style,
+  ...props
+}) => {
   return (
     <Form {...props}>
-      <Row style={{ display: 'flex', flexWrap: 'wrap', ...style }} gutter={24}>
+      <Row style={{ display: 'flex', flexWrap: 'wrap', ...style }} gutter={gutter}>
         {configData.map(({ component, ...props }, index) => (
           <ItemWrapper columns={columns} {...props} key={index}>
             {component}

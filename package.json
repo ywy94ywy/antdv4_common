@@ -1,4 +1,5 @@
 {
+  "name":"lanlinker",
   "private": true,
   "scripts": {
     "start": "umi dev",
@@ -11,6 +12,7 @@
     "antd": "^4.0.0-rc.1",
     "classnames": "^2.2.6",
     "dva": "^2.4.0",
+    "father-doc": "^1.0.0-alpha.16",
     "moment": "^2.22.2",
     "numeral": "^2.0.6",
     "nzh": "^1.0.3",
