@@ -2,18 +2,9 @@
 
 const config = {
   treeShaking: true,
-  // routes: [
-  //   {
-  //     path: '/',
-  //     component: '../layouts/index',
-  //     routes: [
-  //       {
-  //         path: '/',
-  //         component: './page1',
-  //       },
-  //     ],
-  //   },
-  // ],
+  doc:{
+    title:'pro'
+  },
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     [

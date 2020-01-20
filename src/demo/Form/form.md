@@ -1,17 +1,20 @@
 ---
 group:
-    title: 表单
+  title: 组件
+  path: /components
 title: 配置型
 ---
 
 ### 多列表单
+****
 ``` jsx
-import React,{ useState } from "react"
-import { Input ,Button} from "antd"
-import { YForm } from "lanlinker"
+import React, { useState } from 'react';
+import { Input, Button } from 'antd';
+import { YForm } from "lanlinker";
 
 export default ()=>{
-  const [layout, setLayout]=useState("horizontal")
+  const [layout, setLayout] = useState("horizontal");
+
   return (
     <>
       <YForm configData={data} columns={3} layout={layout}/>
@@ -49,6 +52,7 @@ const data = [
 ```
 
 ### 多列表单(带间距)
+****
 ``` jsx
 import React from "react"
 import { Input } from "antd"
@@ -76,6 +80,52 @@ const data = [
 ]
 ```
 
+### 占位与跨行
+****
+``` jsx
+import React from "react"
+import { Input } from "antd"
+import { YForm } from "lanlinker"
 
+export default ()=>{
+  return (
+    <YForm configData={data} columns={3} layout='vertical' />
+  )
+}
 
+const data = [
+  {
+    hold:true
+  },
+  {
+    label: '测试',
+    component: <Input></Input>,
+  },
+  {
+    label: '测试',
+    component: <Input></Input>,
+  },
+  {
+    label: '测试',
+    component: <Input></Input>,
+    colSpan:3
+  },
+]
+```
+
+### 综合应用
+****
 <code src="./index.tsx" />
+
+```less
+.table {
+  :global {
+    .ant-form-item-label {
+      flex: 0 0 100px;
+    }
+    .ant-form-item-control {
+      flex: 1;
+    }
+  }
+}
+```

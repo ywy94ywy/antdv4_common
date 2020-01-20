@@ -1,78 +1,82 @@
 import React from 'react';
-import { Button, Input, Form } from 'antd';
+import { Button, Input, Form, message } from 'antd';
 import { YForm } from '../../';
 import styles from './style.less';
 
-export const a = 1;
 export default () => {
   const [form] = Form.useForm();
+
   return (
     <>
-      <YForm form={form} configData={data} columns={3} className={styles.test}></YForm>
-      <Button
-        onClick={() => {
-          form.validateFields().then(res => {
-            console.log(res);
-          });
-        }}
-      >
-        验证表单
-      </Button>
-      <Button
-        onClick={() => {
-          form.setFieldsValue({
-            '123': 12142,
-          });
-          console.log(form);
-        }}
-      >
-        动态设置表单值
-      </Button>
+      <YForm form={form} configData={data} columns={3} className={styles.table}></YForm>
+      <Button.Group>
+        <Button
+          type="primary"
+          onClick={() => {
+            form.validateFields().then(res => {
+              console.log(res);
+            });
+          }}
+        >
+          验证表单
+        </Button>
+        <Button
+          type="primary"
+          onClick={() => {
+            form.setFieldsValue({
+              '1': '测试值',
+            });
+            console.log(form);
+          }}
+        >
+          动态设置表单值
+        </Button>
+      </Button.Group>
     </>
   );
 };
 
 const data = [
   {
-    label: '1234',
-    name: '123',
-    component: <Input></Input>,
-    rules: [{ required: true }],
-  },
-  {
-    label: '1234',
-    name: '234',
-    component: <Input></Input>,
-  },
-  {
-    hold: true,
-  },
-  {
-    label: '12345',
-    name: '2344',
-    component: <Input></Input>,
-  },
-  {
-    label: '安抚',
+    label: '测试1',
     name: '1',
     component: <Input></Input>,
+    rules: [{ required: true, message: '请输入测试1' }],
   },
   {
-    hold: true,
-  },
-  {
-    label: '阿萨德刚',
+    label: '测试2',
     name: '2',
     component: <Input></Input>,
   },
   {
-    label: '好',
+    hold: true,
+  },
+  {
+    label: '测试3',
     name: '3',
     component: <Input></Input>,
   },
   {
-    label: '单方事故',
+    label: '测试4',
     name: '4',
+    component: <Input></Input>,
+  },
+  {
+    hold: true,
+  },
+  {
+    label: '测试5',
+    name: '5',
+    component: <Input></Input>,
+  },
+  {
+    label: '测试6',
+    name: '6',
+    component: <Input></Input>,
+  },
+  {
+    label: '测试测试7',
+    name: '7',
     component: <Input.TextArea></Input.TextArea>,
     colSpan: 3,
   },
