@@ -2,10 +2,10 @@
 group:
   title: 组件
   path: /components
-title: 配置型
+title: Form
 ---
 
-### 多列表单
+### 多列表单(任意列数)
 ****
 ``` jsx
 import React, { useState } from 'react';
@@ -17,7 +17,7 @@ export default ()=>{
 
   return (
     <>
-      <YForm configData={data} columns={3} layout={layout}/>
+      <YForm configData={data} columns={5} layout={layout}/>
       <Button type="primary" onClick={()=>{
         setLayout(layout==="horizontal"? "vertical" : "horizontal")
        }}>切换布局</Button>
@@ -31,6 +31,22 @@ const data = [
     name:'测试',
     component: <Input></Input>,
     rules:[{ required:true }]
+  },
+  {
+    label: '测试',
+    component: <Input></Input>,
+  },
+  {
+    label: '测试',
+    component: <Input></Input>,
+  },
+  {
+    label: '测试',
+    component: <Input></Input>,
+  },
+  {
+    label: '测试',
+    component: <Input></Input>,
   },
   {
     label: '测试',
@@ -102,8 +118,23 @@ const data = [
     component: <Input></Input>,
   },
   {
+    hold:true
+  },
+  {
     label: '测试',
     component: <Input></Input>,
+  },
+  {
+    hold:true
+  },
+  {
+    label: '测试',
+    component: <Input></Input>,
+  },  
+  {
+    label: '测试',
+    component: <Input></Input>,
+    colSpan:2
   },
   {
     label: '测试',

@@ -1,9 +1,7 @@
 /**
- * @module antd-Form
+ * @module YForm(antd-Form)
  * @description write form with configuration, custom form's columns,gutter & formItem's placeholder,colSpan.
  * @author Des.Yang
- * @Date 2020/1/19
- * @updateDate 2020/1/19
  * @todo configData type
  * @todo to be refactored
  */
@@ -15,11 +13,13 @@ interface YFormProps extends FormProps {
   configData: Array<any>; // formItem array ——todo_how to replace any
   columns?: number; // form columns
   gutter?: number; // form gutter
+  gutterY?: number; // form gutter
 }
 const YForm: React.FC<YFormProps> = ({
   configData = [],
   columns,
   gutter = 24,
+  gutterY = 24,
   style,
   ...props
 }) => {
@@ -27,7 +27,7 @@ const YForm: React.FC<YFormProps> = ({
     <Form {...props}>
       <Row style={{ display: 'flex', flexWrap: 'wrap', ...style }} gutter={gutter}>
         {configData.map(({ component, ...props }, index) => (
-          <ItemWrapper columns={columns} {...props} key={index}>
+          <ItemWrapper columns={columns} style={{ marginBottom: gutterY }} key={index} {...props}>
             {component}
           </ItemWrapper>
         ))}

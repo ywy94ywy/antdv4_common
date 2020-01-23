@@ -7,4 +7,8 @@ title: Tree
 
 ### 定制Tree（showline fixed，右键菜单）
 ****
-<code src="./index.tsx">
+<code src="./tree.tsx">
+
+### SearchTree
+****
+<code src="./searchTree.tsx">

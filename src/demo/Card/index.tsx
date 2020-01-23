@@ -1,5 +1,5 @@
 import React from 'react';
-import { YCard } from '../../';
+import { YCard } from '../..';
 
 export default () => (
   <>

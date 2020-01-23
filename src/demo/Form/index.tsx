@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Input, Form, message } from 'antd';
-import { YForm } from '../../';
+import { Button, Input, Form } from 'antd';
+import { YForm } from '../..';
 import styles from './style.less';
 
 export default () => {

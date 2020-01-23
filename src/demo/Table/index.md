@@ -2,9 +2,9 @@
 group:
   title: 组件
   path: /components
-title: Card
+title: Table
 ---
 
-### 便捷的margin
+### header左右
 ****
-<code src="./index.tsx" >
+<code src="./table.tsx">

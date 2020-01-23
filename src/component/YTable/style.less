@@ -1,0 +1,28 @@
+.header() {
+  display: flex;
+  align-items: center;
+}
+.yTable {
+  :global {
+    .ant-table-body {
+      transition: all 0.3s;
+    }
+  }
+}
+.yTableHeader {
+  display: flex;
+  padding: 10px 0;
+  .yTableLeft {
+    .header;
+    > *:nth-child(n + 2) {
+      margin-left: 8px;
+    }
+  }
+  .yTableRight {
+    .header;
+    margin-left: auto;
+    > *:nth-last-child(n + 2) {
+      margin-right: 8px;
+    }
+  }
+}
